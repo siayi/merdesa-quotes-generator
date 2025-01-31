@@ -15,24 +15,24 @@ class BackgroundError(Exception):
 class QuoteGeneratorGUI:
     def _validate_resources(self):
         """Validate required resources"""
-    resource_dir = Path("resource")
-    required_files = {
-        "watermark": resource_dir / "Img-3.png",
-        "font": resource_dir / "PlusJakartaSans-SemiBold.ttf"
-    }
+        resource_dir = Path("resource")
+        required_files = {
+            "watermark": resource_dir / "Img-3.png",
+            "font": resource_dir / "PlusJakartaSans-SemiBold.ttf"
+        }
 
-    missing_files = []
-    for name, path in required_files.items():
-        if not path.exists():
-            missing_files.append(str(path))
+        missing_files = []
+        for name, path in required_files.items():
+            if not path.exists():
+                missing_files.append(str(path))
 
-    if missing_files:
-        messagebox.showerror(
-            "Error",
-            f"Resource files missing:\n{', '.join(missing_files)}\n"
-            f"Please ensure the 'resource' folder contains all required files."
-        )
-        raise FileNotFoundError("Required resource files are missing.")
+        if missing_files:
+            messagebox.showerror(
+                "Error",
+                f"Resource files missing:\n{', '.join(missing_files)}\n"
+                f"Please ensure the 'resource' folder contains all required files."
+            )
+            raise FileNotFoundError("Required resource files are missing.")
     
     def __init__(self, root: tk.Tk):
         self.root = root
@@ -148,9 +148,9 @@ class QuoteGeneratorGUI:
         color_frame = ttk.Frame(parent)
         color_frame.pack(fill=tk.X, padx=10)
     
-    def _create_color_controls(self, parent):
-        """Create color selection controls"""
-        ttk.Label(parent, text="Text Color").pack(pady=(20, 5))
+    # def _create_color_controls(self, parent):
+    #     """Create color selection controls"""
+    #     ttk.Label(parent, text="Text Color").pack(pady=(20, 5))
 
         # Tombol untuk memilih warna
         self.selected_color = "#FFFFFF"  # Default: putih
