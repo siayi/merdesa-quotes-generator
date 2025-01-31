@@ -1,3 +1,4 @@
+# main.py
 from pathlib import Path
 import tkinter as tk
 from tkinter import ttk, filedialog, messagebox, colorchooser
@@ -10,7 +11,6 @@ from typing import Optional, Dict, Any
 class BackgroundError(Exception):
     """Custom exception untuk error terkait background"""
     pass
-
     
 class QuoteGeneratorGUI:
     def _validate_resources(self):
